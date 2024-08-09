@@ -38,8 +38,7 @@ async def get_all_donations(
     session: AsyncSession = Depends(get_async_session)
 ):
     """Только для суперпользователя. Возвращает список всех пожертвований."""
-    all_donations = await donation_crud.get_multi(session)
-    return all_donations
+    return await donation_crud.get_multi(session)
 
 
 @router.get(
@@ -52,7 +51,6 @@ async def get_user_donations(
     user: User = Depends(current_user),
 ):
     """Вернуть список пожертвований пользователя, выполняющего запрос."""
-    donations = await donation_crud.get_donation_by_user(
+    return await donation_crud.get_donation_by_user(
         session=session, user=user
     )
-    return donations

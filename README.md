@@ -48,5 +48,5 @@ uvicorn app.main:app --reload
 
 Использование
 Эндпоинты API
-GET /charity_projects/ — Получить список благотворительных проектов.
-POST /donations/ — Создать новое пожертвование.
+GET /charity_project/ — Получить список благотворительных проектов.
+POST /donation/ — Создать новое пожертвование.
